@@ -1,3 +1,4 @@
+import { FirebaseService } from './../services/firebase.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerRegisterComponent implements OnInit {
 
-  constructor() { }
+  shopName : string;
+  businessID : string;
+  address : string;
+  contact : number;
+  email : string;
+  password: string;
+
+  constructor(private firebaseService : FirebaseService) { }
 
   ngOnInit(): void {
+  }
+
+  CreateSeller(){
+    let record = {};
+    record['shopName'] = this.shopName;
+    record['businessID'] = this.businessID;
+    record['address'] = this.address;
+    record['contact'] = this.contact;
+    record['email'] = this.email;
+    record['password'] = this.password;
+    this.firebaseService.create_NewSeller(record).then(resp => {
+      this.shopName = "";
+      this.businessID = "";
+      this.address = "";
+      this.contact = undefined;
+      this.email = "";
+      this.password = "";
+      console.log(resp);
+    })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
 }
