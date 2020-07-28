@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { SellerLoginComponent } from './seller-login/seller-login.component';
 import { SellerRegisterComponent } from './seller-register/seller-register.component';
+import { CustomersRegisterComponent } from './customers/customers-register/customers-register.component';
+import { CustomersLoginComponent } from './customers/customers-login/customers-login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { SellerRegisterComponent } from './seller-register/seller-register.compo
     FooterComponent,
     RecipesComponent,
     SellerLoginComponent,
-    SellerRegisterComponent
+    SellerRegisterComponent,
+    CustomersRegisterComponent,
+    CustomersLoginComponent
   ],
   imports: [
     BrowserModule,

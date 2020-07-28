@@ -21,4 +21,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['sellerLogIn']);
   }
 
+  SingupClicked(){
+    this.router.navigate(['customerRegister']);
+  }
+  SinginClicked(){
+    this.router.navigate(['customerLogIn']);
+  }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from './../services/firebase.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class SellerLoginComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private firebaseService : FirebaseService) {}
 
   ngOnInit(): void {
+
   }
 
   SwitchToSignUP(){

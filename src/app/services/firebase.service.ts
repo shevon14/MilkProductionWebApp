@@ -25,4 +25,10 @@ export class FirebaseService {
   }
 
 
+
+
+  
+  create_NewCustomers(record) {
+    return this.firestore.collection('Customers').add(record);
+  }
 }
