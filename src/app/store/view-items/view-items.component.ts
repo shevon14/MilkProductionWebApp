@@ -1,3 +1,4 @@
+import { FirebaseService } from './../../services/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,9 +9,22 @@ import { Router } from '@angular/router';
 })
 export class ViewItemsComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router,
+              private firebaseService : FirebaseService) { }
+
+  products : any;            
 
   ngOnInit(): void {
+      this.firebaseService.read_Products().subscribe(data => {
+          this.products = data.map(e => {
+            return {
+              id : e.payload.doc.id,
+              name : e.payload.doc.data()['productName'],
+              price : e.payload.doc.data()['unitPrice']
+            };
+          })
+          console.log(this.products);
+      })
   }
 
   elements: any = [
@@ -27,6 +41,10 @@ export class ViewItemsComponent implements OnInit {
 
   editItemclicked(){
     this.router.navigate(['editItems']);
+  }
+
+  deleteItemclicked(productID){
+    this.firebaseService.delete_Product(productID);
   }
 
 }

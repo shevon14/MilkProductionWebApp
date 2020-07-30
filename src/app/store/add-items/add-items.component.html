@@ -11,13 +11,13 @@
 
             <!-- Name -->
             <div class="md-form mt-4">
-                <input type="text" name="materialSubscriptionFormPasswords" class="form-control" mdbInput>
-                <label for="materialSubscriptionFormPasswords">Product Name</label>
+                <input type="text" name="materialSubscriptionFormName" [(ngModel)]="productName" class="form-control" mdbInput >
+                <label for="materialSubscriptionFormName">Product Name</label>
             </div>
 
             <!-- Category -->
             <div class="md-form mt-3">
-                <select class="browser-default custom-select" name="materialSubscriptionFormPasswords" >
+                <select class="browser-default custom-select" [(ngModel)]="category" name="materialSubscriptionFormCategory">
                     <option selected>Select Product Category</option>
                     <option value="1">Butter & Facts</option>
                     <option value="2">Milk</option>
@@ -28,8 +28,8 @@
 
             <!-- Unit Price -->
             <div class="md-form mt-3">
-                <input type="text" name="materialSubscriptionFormComapnyName" class="form-control"  mdbInput>
-                <label for="materialSubscriptionFormComapnyName">Unit Price</label>
+                <input type="text" name="materialSubscriptionFormUnitPrice" [(ngModel)]="unitPrice" class="form-control"  mdbInput>
+                <label for="materialSubscriptionFormUnitPrice">Unit Price</label>
             </div>
 
             <!-- Upload Image -->
@@ -42,7 +42,7 @@
 
             <!-- Sign in button -->
             <button mdbBtn color="info" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"
-                mdbWavesEffect type="submit">Add Product</button>
+                mdbWavesEffect type="submit" (click)="CreateProduct()">Add Product</button>
 
         </form>
         <!-- Form -->
@@ -51,3 +51,5 @@
 
 </mdb-card>
 <!-- Material form subscription -->
+
+

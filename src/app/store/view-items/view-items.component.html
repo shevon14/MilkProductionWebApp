@@ -14,12 +14,12 @@
               </tr>
             </thead>
             <tbody >
-              <tr mdbTableCol *ngFor="let el of elements">
+              <tr mdbTableCol *ngFor="let el of products">
                 <th scope="row">{{el.id}}</th>
                 <td>{{el.name}}</td>
-                <td>{{el.price}}</td>
+                <td>Rs.{{el.price}}/=</td>
                 <td><button type="button" mdbBtn color="warning" size="sm" mdbWavesEffect (click)='editItemclicked()'><mdb-icon fas icon="pen" class="mr-1"></mdb-icon></button></td>
-                <td><button type="button" mdbBtn color="danger" size="sm" mdbWavesEffect>x</button></td>
+                <td><button type="button" mdbBtn color="danger" size="sm" mdbWavesEffect (click)='deleteItemclicked(el.id)'>x</button></td>
               </tr>
             </tbody>
           </table>
