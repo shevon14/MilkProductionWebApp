@@ -1,0 +1,29 @@
+<!-- Material form subscription -->
+<mdb-card>
+
+    <mdb-card-header class="px-lg-5">
+        <button type="button" mdbBtn color="info" mdbWavesEffect (click)='AddItemClicked()'>Add item</button>
+    </mdb-card-header>
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5">
+        <table mdbTable class="text-center" striped="true">
+            <thead class="black white-text">
+              <tr>
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr mdbTableCol *ngFor="let el of elements">
+                <th scope="row">{{el.id}}</th>
+                <td>{{el.name}}</td>
+                <td>{{el.price}}</td>
+                <td><button type="button" mdbBtn color="warning" size="sm" mdbWavesEffect (click)='editItemclicked()'><mdb-icon fas icon="pen" class="mr-1"></mdb-icon></button></td>
+                <td><button type="button" mdbBtn color="danger" size="sm" mdbWavesEffect>x</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </mdb-card-body>
+
+  </mdb-card>
+  <!-- Material form subscription -->

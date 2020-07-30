@@ -19,6 +19,14 @@ import { SellerLoginComponent } from './seller-login/seller-login.component';
 import { SellerRegisterComponent } from './seller-register/seller-register.component';
 import { CustomersRegisterComponent } from './customers/customers-register/customers-register.component';
 import { CustomersLoginComponent } from './customers/customers-login/customers-login.component';
+import { ProductsComponent } from './products/products.component';
+import { AboutComponent } from './about/about.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ViewItemsComponent } from './store/view-items/view-items.component';
+import { AddItemsComponent } from './store/add-items/add-items.component';
+import { CartComponent } from './cart/cart.component';
+import { EditItemsComponent } from './store/edit-items/edit-items.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +38,15 @@ import { CustomersLoginComponent } from './customers/customers-login/customers-l
     SellerLoginComponent,
     SellerRegisterComponent,
     CustomersRegisterComponent,
-    CustomersLoginComponent
+    CustomersLoginComponent,
+    ProductsComponent,
+    AboutComponent,
+    ContactUsComponent,
+    ViewItemsComponent,
+    AddItemsComponent,
+    CartComponent,
+    EditItemsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

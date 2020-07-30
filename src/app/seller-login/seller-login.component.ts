@@ -14,6 +14,10 @@ export class SellerLoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  
+  signInClicked(){
+    this.router.navigate(['store']);
+  }
 
   SwitchToSignUP(){
     this.router.navigate(['sellerRegister']);

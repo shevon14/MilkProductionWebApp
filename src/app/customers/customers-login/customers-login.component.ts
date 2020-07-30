@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customers-login',
@@ -7,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
   SwitchToSignUP(){
-    
+    this.router.navigate(['customerRegister']);
+  }
+
+  signInClicked(){
+    this.router.navigate(['products']);
   }
 
 }

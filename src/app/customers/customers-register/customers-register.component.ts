@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './../../services/firebase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customers-register',
@@ -16,7 +17,8 @@ export class CustomersRegisterComponent implements OnInit {
   email : string;
   password: string;
 
-  constructor(private firebaseService : FirebaseService) { }
+  constructor(private firebaseService : FirebaseService,
+              private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +38,8 @@ export class CustomersRegisterComponent implements OnInit {
       this.email = "";
       this.password = "";
       console.log(resp);
+      this.router.navigate(['customerRegister'])
+      
     })
       .catch(error => {
         console.log(error);

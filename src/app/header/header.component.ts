@@ -28,4 +28,20 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['customerLogIn']);
   }
 
+  ProductsClick(){
+    this.router.navigate(['products']);
+  }
+
+  cartClicked(){
+    this.router.navigate(['cart']);
+  }
+
+  AboutClick(){
+    this.router.navigate(['about']);
+  }
+
+  ContactUsClick(){
+    this.router.navigate(['contact']);
+  }
+
 }
