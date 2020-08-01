@@ -27,12 +27,7 @@ export class ViewItemsComponent implements OnInit {
       })
   }
 
-  elements: any = [
-    {id: 1, name: 'rolex watch', price: 'Rs.3000'},
-    {id: 2, name: 'head set',  price: 'Rs.1920'},
-    {id: 3, name: 'mobile charger', price: 'Rs.600'},
-  ];
-
+ 
   headElements = ['ID', 'Product', 'Price', 'Edit' ,'Remove'];
 
   AddItemClicked(){
@@ -48,3 +43,4 @@ export class ViewItemsComponent implements OnInit {
   }
 
 }
+

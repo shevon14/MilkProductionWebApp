@@ -8,50 +8,54 @@
 </section>
 
 
-<mdb-card class="card pb-3 rounded w-100" style="margin-top: 10px;">
-    <mdb-card-body>
+<div>
 
-        <div class="container-fluid">
+    <mdb-card class="card pb-3 rounded w-100" style="margin-top: 10px;" >
+        <mdb-card-body>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <h4 class="font-weight-bold">Butter & Facts</h4>
+                </div>
+                <hr class="bg-info">
+            </div>
+
             <div class="row">
-                <h4 class="font-weight-bold">Butter & Facts</h4>
+                <div class="col-md-2 pb-3" *ngFor="let card of products" >
+
+                    <mdb-card class="card text-center pb-0 rounded hoverable"  >
+                        <div class="view overlay">
+                            <img class="card-img-top img-responsive" style="height: 150px;"  [src]="card.imglink">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <mdb-card-body>
+                            <mdb-card-text class="text-center" style="margin-top: 5px;">
+                                <h6 class="font-weight-bold">{{card.name}}</h6>
+                                <h5>Rs.{{card.price}}/=</h5>
+                                <span class="pt-5"><mdb-icon fas icon="minus-circle" size="lg" class="px-2" (click) = 'minusBtnClicked()'></mdb-icon>
+                                    {{quantity}} <mdb-icon fas icon="plus-circle" size="lg" class="px-2" (click) = 'plusBtnClicked()'></mdb-icon></span>
+                            </mdb-card-text>
+                        </mdb-card-body>
+
+                        <mdb-card-footer>
+                                <button type="button" size="sm" mdbBtn color="info" mdbWavesEffect>Add to Cart</button> 
+                        </mdb-card-footer>
+
+                    </mdb-card>
+
+
+                </div>
             </div>
-            <hr class="bg-info">
-        </div>
 
-        <div class="row">
-            <div class="col-md-2 pb-3" *ngFor="let card of cards">
+        </mdb-card-body>
+    </mdb-card>
 
-                <mdb-card class="card text-center pb-0 rounded hoverable" >
-                    <div class="view overlay">
-                        <img class="card-img-top img-responsive" style="height: 150px;" [src]="img">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
+</div>
 
-                    <mdb-card-body>
-                        <mdb-card-text class="text-center" style="margin-top: 5px;">
-                            <h6 class="font-weight-bold">{{card.title}}</h6>
-                            <h5>Rs.{{totalprice}}/=</h5>
-                            <span class="pt-5"><mdb-icon fas icon="minus-circle" size="lg" class="px-2" (click) = 'minusBtnClicked()'></mdb-icon>
-                                 {{quantity}} <mdb-icon fas icon="plus-circle" size="lg" class="px-2" (click) = 'plusBtnClicked()'></mdb-icon></span>
-                        </mdb-card-text>
-                    </mdb-card-body>
-
-                    <mdb-card-footer>
-                            <button type="button" size="sm" mdbBtn color="info" mdbWavesEffect>Add to Cart</button> 
-                    </mdb-card-footer>
-
-                </mdb-card>
-
-
-            </div>
-        </div>
-
-    </mdb-card-body>
-</mdb-card>
-
-<mdb-card class="card pb-3 rounded w-100" style="margin-top: 10px;">
+<!-- <mdb-card class="card pb-3 rounded w-100" style="margin-top: 10px;">
     <mdb-card-body>
 
         <div class="container-fluid">
@@ -177,4 +181,4 @@
         </div>
 
     </mdb-card-body>
-</mdb-card>
+</mdb-card> -->

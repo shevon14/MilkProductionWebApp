@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {AngularFireStorageModule,AngularFireStorageReference,AngularFireUploadTask} from "@angular/fire/storage";
 
 import { FormsModule } from '@angular/forms';
 
@@ -29,6 +30,9 @@ import { AddItemsComponent } from './store/add-items/add-items.component';
 import { CartComponent } from './cart/cart.component';
 import { EditItemsComponent } from './store/edit-items/edit-items.component';
 import { AdminComponent } from './admin/admin.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -55,12 +59,13 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     AngularFireAuthModule,
     AppRoutingModule,
+    AngularFireStorageModule,
     MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule
   ],
-  providers: [AuthService],
+  providers: [AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
