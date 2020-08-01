@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { FirebaseService } from './../services/firebase.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -17,6 +18,7 @@ export class SellerRegisterComponent implements OnInit {
   password: string;
 
   constructor(private firebaseService : FirebaseService,
+              public authService : AuthService,
               private router : Router) { }
 
   ngOnInit(): void {

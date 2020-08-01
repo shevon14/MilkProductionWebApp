@@ -6,10 +6,10 @@
     <p class="h4 mb-4">Sign in to your Shop</p>
   
     <!-- Email -->
-    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" #userName required name="inputEmail">
   
     <!-- Password -->
-    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" #userPassword required name="inputPassword">
   
     <div class="d-flex justify-content-around">
       <div>
@@ -23,7 +23,7 @@
     </div>
   
     <!-- Sign in button -->
-    <button mdbBtn color="info" block="true" class="my-4" type="submit" (click)= "signInClicked()">Sign in</button>
+    <button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="authService.SignIn(userName.value, userPassword.value)">Sign in</button>
   
     <!-- Register -->
     <p>Want to become a seller | don't have an account

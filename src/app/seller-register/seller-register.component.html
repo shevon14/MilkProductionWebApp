@@ -6,11 +6,11 @@
   <div class="form-row mb-4">
     <div class="col">
       <!-- Shop name -->
-      <input type="text" id="defaultRegisterFormShopName" class="form-control" [(ngModel)]="shopName" name="shopname" placeholder="Shop name">
+      <input type="text" id="defaultRegisterFormShopName" class="form-control" [(ngModel)]="shopName"  name="shopname" placeholder="Shop name">
     </div>
     <div class="col">
       <!-- Business Reg ID -->
-      <input type="text" id="defaultRegisterFormBusinessID" class="form-control" [(ngModel)]="businessID" name="businessID" placeholder="Shop Registration ID">
+      <input type="text" id="defaultRegisterFormBusinessID" class="form-control" [(ngModel)]="businessID" name="businessID"  placeholder="Shop Registration ID">
     </div>
   </div>
 
@@ -26,13 +26,13 @@
   </div>
 
   <!-- E-mail -->
-  <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" [(ngModel)]="email" name="email" placeholder="E-mail">
+  <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" [(ngModel)]="email" name="email" #userEmail required placeholder="E-mail">
 
   <!-- Password -->
-  <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" [(ngModel)]="password" name="password" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+  <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" [(ngModel)]="password" name="password" #userPwd required placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
 
   <!-- Sign up button -->
-  <button mdbBtn color="info" block="true" class="my-4" type="button" (click)="CreateSeller()" >Sign Up</button>
+  <button mdbBtn color="info" block="true" class="my-4" type="button" (click)="authService.SignUp(userEmail.value, userPwd.value) && CreateSeller()" >Sign Up</button>
 
   <!-- Social register -->
   <p>or sign up with:</p>
