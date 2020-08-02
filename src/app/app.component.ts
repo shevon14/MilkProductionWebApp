@@ -1,3 +1,4 @@
+import { NavbarService } from './services/navbar.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MilkProductionWebApp-frontend';
+  navbarStatus = true;
+
+  constructor(private navbarService: NavbarService) {
+    this.navbarStatus = navbarService.getNavbarStatus();
+    this.navbarService.navbarStatusChanged.subscribe((newStatus) => {
+      this.navbarStatus = newStatus;
+    });
+  }
+
 }

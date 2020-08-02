@@ -12,26 +12,57 @@ export class CartComponent implements OnInit {
   constructor(private router : Router, 
     private firebaseService : FirebaseService) { }
 
-  // elements: any = [
-  //   {id: 1, name: 'rolex watch', quantity: '1', price: 'Rs.3000'},
-  //   {id: 2, name: 'head set', quantity: '2', price: 'Rs.1920'},
-  //   {id: 3, name: 'mobile charger', quantity: '1', price: 'Rs.600'},
-  // ];
+  quantity: number = 1;
+  totalprice : number;
 
   headElements = ['Name', 'Qtn.', 'Price', '' ,'Remove'];
 
   cartitems : any;
-  quantity : number = 1;
 
   ngOnInit(): void {
-    this.firebaseService.read_Cartitems().subscribe(data => {
-      this.cartitems = data.map(e => {
-        return {
-          pname : e.payload.doc.data()['ProductName'],
-          pprice : e.payload.doc.data()['unitPrice'],
-        };
-      })
-  })
+      this.firebaseService.read_Cartitems().subscribe(data => {
+        this.cartitems = data.map(e => {
+          return {
+            id : e.payload.doc.id,
+            pname : e.payload.doc.data()['ProductName'],
+            pprice : e.payload.doc.data()['unitPrice'],
+          };
+        })
+        this.calculateTotalAmount();
+    });
+    
   }
+
+  minusBtnClicked(){
+    // if(this.quantity == 1){
+    //     //can't be minus
+    // } else {
+    //   this.quantity = this.quantity - 1;
+    //   this.totalprice =  this.unitprice * this.quantity;
+    // }
+  }
+
+  plusBtnClicked(){
+    // this.quantity = this.quantity + 1 ;
+    // this.totalprice =  this.unitprice * this.quantity;
+  }
+
+  calculateTotalAmount(){
+    let amount = 0;
+    for (let x of this.cartitems) {
+      amount = amount + Number(x.pprice);
+    }
+    this.totalprice = amount;
+  }
+
+  deleteitmClicked(itemID){
+    this.firebaseService.delete_ItemInCart(itemID);
+  }
+
+  checkoutClick(){
+    this.router.navigate(["customerLogIn"]);
+  }
+
+
 
 }

@@ -11,7 +11,7 @@ export class CustomersRegisterComponent implements OnInit {
 
  
   firstName : string;
-  lastName : string;
+  postalcode : string;
   address : string;
   contact : number;
   email : string;
@@ -25,14 +25,14 @@ export class CustomersRegisterComponent implements OnInit {
   CreateCustomer(){
     let record = {};
     record['firstName'] = this.firstName;
-    record['lastName'] = this.lastName;
+    record['postalCode'] = this.postalcode;
     record['address'] = this.address;
     record['contact'] = this.contact;
     record['email'] = this.email;
     record['password'] = this.password;
     this.firebaseService.create_NewCustomers(record).then(resp => {
       this.firstName = "";
-      this.lastName = "";
+      this.postalcode = "";
       this.address = "";
       this.contact = undefined;
       this.email = "";

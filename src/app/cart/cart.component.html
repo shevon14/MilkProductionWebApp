@@ -17,10 +17,11 @@
             <tbody >
               <tr mdbTableCol *ngFor="let el of cartitems">
                 <td>{{el.pname}}</td>
-                <td><span class="pt-5"><mdb-icon fas icon="minus-circle" size="lg" class="px-2"></mdb-icon> {{quantity}} <mdb-icon fas icon="plus-circle" size="lg" class="px-2"></mdb-icon></span></td>
+                <td><span class="pt-5"><mdb-icon fas icon="minus-circle" size="lg" class="px-2" (click) = 'minusBtnClicked()'></mdb-icon>
+                  {{quantity}} <mdb-icon fas icon="plus-circle" size="lg" class="px-2" (click) = 'plusBtnClicked()'></mdb-icon></span></td>
                 <td>{{el.pprice}}</td>
                 <td></td>
-                <td><button type="button" mdbBtn color="danger" size="sm" mdbWavesEffect>x</button></td>
+                <td><button type="button" mdbBtn color="danger" size="sm" mdbWavesEffect (click)="deleteitmClicked(el.id)">x</button></td>
               </tr>
             </tbody>
           </table>
@@ -30,8 +31,8 @@
         <table mdbTable class="text-center">
             <thead class="black white-text">
               <tr>
-                <th scope="col"><h4>Total : Rs.5520 /=</h4></th>
-                <th scope="col"><button type="button" mdbBtn color="info" mdbWavesEffect>Check Out</button></th>
+                <th scope="col"><h4>Total : {{totalprice}} /=</h4></th>
+                <th scope="col"><button type="button" mdbBtn color="info" mdbWavesEffect (click) = "checkoutClick()">Check Out</button></th>
               </tr>
             </thead>
           </table>
