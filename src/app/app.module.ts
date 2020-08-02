@@ -30,6 +30,7 @@ import { AddItemsComponent } from './store/add-items/add-items.component';
 import { CartComponent } from './cart/cart.component';
 import { EditItemsComponent } from './store/edit-items/edit-items.component';
 import { AdminComponent } from './admin/admin.component';
+import { CategoryFilterPipe } from './pipes/category-filter.pipe';
 
 
 
@@ -52,7 +53,8 @@ import { AdminComponent } from './admin/admin.component';
     AddItemsComponent,
     CartComponent,
     EditItemsComponent,
-    AdminComponent
+    AdminComponent,
+    CategoryFilterPipe
   ],
   imports: [
     BrowserModule,

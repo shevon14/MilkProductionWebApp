@@ -25,12 +25,13 @@ export class FirebaseService {
     this.firestore.doc('Sellers/' + record_id).delete();
   }
 
+
+  
   //customer registration
   create_NewCustomers(record) {
     return this.firestore.collection('Customers').add(record);
   }
   
-
 
 
   //add items 
@@ -46,6 +47,24 @@ export class FirebaseService {
   //delete product
   delete_Product(record_id){
     this.firestore.doc('products/' + record_id).delete();
+  }
+
+
+
+
+  //add items to cart
+  add_ItemToCart(record){
+    return this.firestore.collection('cart').add(record);
+  }
+
+  //read cart items
+  read_Cartitems() {
+    return this.firestore.collection('cart').snapshotChanges();
+  }
+
+  //delete product
+  delete_ItemInCart(record_id){
+    this.firestore.doc('cart/' + record_id).delete();
   }
 
 

@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
   butterProducts : any;
   milkProducts : any;
   cheeseProducts : any;
-  yougurdProducts : any;
+  yoghurtProducts : any;
 
   products : any;
 
@@ -38,11 +38,18 @@ export class ProductsComponent implements OnInit {
             category : e.payload.doc.data()['category']
           };
         })
-        console.log(this.products);
+        this.productsfilter();
     })
   }
 
+  productsfilter(){
+   this.butterProducts = this.products.filter(xx => xx.category === '1');
+   this.milkProducts = this.products.filter(xx => xx.category === '2')
+   this.cheeseProducts = this.products.filter(xx => xx.category === '3');
+   this.yoghurtProducts = this.products.filter(xx => xx.category === '4')
+  }
 
+ 
   minusBtnClicked(){
     if(this.quantity == 1){
         //can't be minus
@@ -55,6 +62,10 @@ export class ProductsComponent implements OnInit {
   plusBtnClicked(){
     this.quantity = this.quantity + 1 ;
     this.totalprice =  this.unitprice * this.quantity;
+  }
+
+  cartClicked(){
+    this.router.navigate(['cart']);
   }
 
 }
