@@ -15,11 +15,10 @@
               </tr>
             </thead>
             <tbody >
-              <tr mdbTableCol *ngFor="let el of elements">
-                <th scope="row">{{el.id}}</th>
-                <td>{{el.name}}</td>
-                <td><span class="pt-5"><mdb-icon fas icon="minus-circle" size="lg" class="px-2"></mdb-icon> {{el.quantity}} <mdb-icon fas icon="plus-circle" size="lg" class="px-2"></mdb-icon></span></td>
-                <td>{{el.price}}</td>
+              <tr mdbTableCol *ngFor="let el of cartitems">
+                <td>{{el.pname}}</td>
+                <td><span class="pt-5"><mdb-icon fas icon="minus-circle" size="lg" class="px-2"></mdb-icon> {{quantity}} <mdb-icon fas icon="plus-circle" size="lg" class="px-2"></mdb-icon></span></td>
+                <td>{{el.pprice}}</td>
                 <td></td>
                 <td><button type="button" mdbBtn color="danger" size="sm" mdbWavesEffect>x</button></td>
               </tr>

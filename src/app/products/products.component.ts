@@ -68,4 +68,19 @@ export class ProductsComponent implements OnInit {
     this.router.navigate(['cart']);
   }
 
+  addtoCartClicked(cproductId, cname, cprice){
+    let record = {};
+    record['productID'] = cproductId;
+    record['customerID'] = 'customerId';
+    record['ProductName'] = cname;
+    record['unitPrice'] = cprice;
+    this.firebaseService.add_ItemToCart(record).then(resp => {
+      console.log(resp);
+     // this.router.navigate(['cart'])
+    })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
 }
