@@ -1,3 +1,4 @@
+<div>
 <header class="h-100">
     <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black ie-nav fixed-top" [containerInside]="true">
         <mdb-navbar-brand>
@@ -6,3 +7,155 @@
     </mdb-navbar>
 
 </header>
+
+<hr class="warning-color">
+
+<div>
+    <mdb-card>
+        <mdb-card-body class="px-lg-5">
+            <section class="team-section text-center my-5">
+                <!-- Grid row -->
+                <div class="row">
+            
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-4 mb-lg-0">
+                    <div class="avatar mx-auto">
+                        <mdb-icon fas icon="boxes" class="cyan-text" size="5x"></mdb-icon>
+                    </div>
+                    <h5 class="font-weight-bold mt-4">Products</h5>
+                    <h1 class="text-uppercase blue-text">
+                    <strong>{{products.length}} + </strong>
+                    </h1>
+                </div>
+                <!-- Grid column -->
+    
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-4 mb-lg-0">
+                    <div class="avatar mx-auto">
+                        <mdb-icon fas icon="store-alt" class="amber-text" size="5x"></mdb-icon>
+                    </div>
+                    <h5 class="font-weight-bold mt-4">Sellers</h5>
+                    <h1 class="text-uppercase blue-text">
+                    <strong>{{sellers.length}} +</strong>
+                    </h1>
+                </div>
+                <!-- Grid column -->
+    
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-4 mb-lg-0">
+                    <div class="avatar mx-auto">
+                        <mdb-icon fas icon="users" class="red-text" size="5x"></mdb-icon>
+                    </div>
+                    <h5 class="font-weight-bold mt-4 ">Customers</h5>
+                    <h1 class="text-uppercase blue-text">
+                    <strong>{{customers.length}} +</strong>
+                    </h1>
+                </div>
+                <!-- Grid column -->
+    
+                </div>
+                <!-- Grid row -->
+            </section>
+        </mdb-card-body>
+    </mdb-card>
+         
+</div>
+
+<hr class="info-color">
+
+<div>
+        <mdb-card>
+
+            <mdb-card-header class="px-lg-5 text-center">
+                <h4>All Products</h4>
+            </mdb-card-header>
+
+            <!--Card content-->
+            <mdb-card-body class="px-lg-5">
+                <table mdbTable mdbTableScroll scrollY="true" maxHeight="300" class="text-center" striped="true">
+                    <thead class="black white-text">
+                    <tr>
+                        <th *ngFor="let head of productTable" scope="col">{{head}} </th>
+                    </tr>
+                    </thead>
+                    <tbody >
+                        <tr mdbTableCol *ngFor="let el of products">
+                            <td scope="row"><img [src]="el.imglink" class="img-responsive" style="height:50px"></td>
+                            <td>{{el.name}}</td>
+                            <td>Rs.{{el.price}}/=</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mdb-card-body>
+
+    </mdb-card>
+        
+</div>
+
+<hr class="info-color">
+
+  <div>
+            <mdb-card>
+
+                <mdb-card-header class="px-lg-5 text-center">
+                    <h4>Registered Sellers</h4>
+                </mdb-card-header>
+
+                <!--Card content-->
+                <mdb-card-body class="px-lg-5">
+                    <table mdbTable class="text-center" striped="true">
+                        <thead class="black white-text">
+                        <tr>
+                            <th *ngFor="let head of sellerTable" scope="col">{{head}} </th>
+                        </tr>
+                        </thead>
+                        <tbody >
+                            <tr mdbTableCol *ngFor="let el of sellers">
+                                <td>{{el.name}}</td>
+                                <td>{{el.bid}}</td>
+                                <td>{{el.address}}</td>
+                                <td>{{el.contact}}</td>
+                                <td>{{el.email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mdb-card-body>
+
+        </mdb-card>
+        
+    </div>
+
+    <hr class="info-color">
+
+    <div>
+        <mdb-card>
+
+            <mdb-card-header class="px-lg-5 text-center">
+                <h4>Registered Customers</h4>
+            </mdb-card-header>
+
+            <!--Card content-->
+            <mdb-card-body class="px-lg-5">
+                <table mdbTable class="text-center" striped="true">
+                    <thead class="black white-text">
+                    <tr>
+                        <th *ngFor="let head of customerTable" scope="col">{{head}} </th>
+                    </tr>
+                    </thead>
+                    <tbody >
+                        <tr mdbTableCol *ngFor="let el of customers">
+                            <td>{{el.name}}</td>
+                            <td>{{el.address}}</td>
+                            <td>{{el.contact}}</td>
+                            <td>{{el.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mdb-card-body>
+
+    </mdb-card>
+    
+</div>
+
+</div>
+

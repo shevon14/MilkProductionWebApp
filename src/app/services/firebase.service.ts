@@ -31,6 +31,10 @@ export class FirebaseService {
   create_NewCustomers(record) {
     return this.firestore.collection('Customers').add(record);
   }
+
+  read_Customers() {
+    return this.firestore.collection('Customers').snapshotChanges();
+  }
   
 
 

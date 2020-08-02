@@ -24,7 +24,7 @@ export class CustomersRegisterComponent implements OnInit {
   }
   CreateCustomer(){
     let record = {};
-    record['firstName'] = this.firstName;
+    record['Name'] = this.firstName;
     record['postalCode'] = this.postalcode;
     record['address'] = this.address;
     record['contact'] = this.contact;
